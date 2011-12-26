@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<title>tkazec</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+		<link rel="stylesheet" href="css.css">
+		<script src="http://www.google-analytics.com/ga.js" async></script>
+		<script>
+		var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+		document.addEventListener("keydown", function fn(e){
+			kkeys.push(e.keyCode);
+			if (kkeys.toString().indexOf(konami) >= 0) {
+				document.removeEventListener("keydown", fn, false);
+				document.getElementById("github").children[0].src = "github-red.png";
+				konami = document.createElement("script");
+				konami.src = "http://www.cornify.com/js/cornify.js";
+				konami.onload = function(){
+					cornify_add();
+					document.addEventListener("keydown", cornify_add, false);
+				};
+				document.body.appendChild(konami);
+			}
+		}, false);
+		
+		var _gaq = _gaq || [];
+		_gaq.push(["_setAccount", "##GA##"]);
+		_gaq.push(["_trackPageview"]);
+		</script>
+	</head>
+	<body>
+		<a href="https://github.com/tkazec" id="github"><img src="github-black.png" width="149" height="149" alt="Fork me on GitHub"></a>
+		
+		<h1 id="head"><a href="https://twitter.com/tkazec">@</a>tkaz<span>.</span>ec</h1>
+		
+		<section>
+			<a href="http://canvas-td.tkaz.ec">
+				<img src="canvas-td.png" width="50" height="50" alt="Play Canvas TD">
+			</a>
+			
+			<h1>Canvas TD</h1>
+			<p>A fully featured tower defense game built with &lt;canvas&gt;.</p>
+			
+			<footer>
+				<a href="http://canvas-td.tkaz.ec">play</a> -
+				<a href="https://chrome.google.com/webstore/detail/dcccdbdamkpeogjcbojmkfdicnnakljo">app</a> -
+				<a href="https://github.com/tkazec/canvas-td">source</a>
+			</footer>
+		</section>
+		
+		<!--<section>
+			<a>
+				<img src="" width="50" height="50" alt="Play Scalable TD">
+			</a>
+			
+			<h1>Scalable TD</h1>
+			<p>Scarily scalable.</p>
+			
+			<footer>
+				<a href="http://scalable-td.tkaz.ec">play</a> -
+				<a href="https://github.com/tkazec/scalable-td">source</a>
+			</footer>
+		</section>-->
+		
+		<section>
+			<a href="http://pocketjs.tkaz.ec">
+				<img src="pocketjs.png" width="48" height="48" alt="Browse PocketJS" style="padding:1px">
+			</a>
+			
+			<h1>PocketJS</h1>
+			<p>A friendly JavaScript reference, currently under development.</p>
+			
+			<footer>
+				<a href="http://pocketjs.tkaz.ec">browse</a> -
+				<a href="https://github.com/tkazec/pocketjs">source</a>
+			</footer>
+		</section>
+		
+		<!--<section>
+			<a>
+				<img src="auburn.png" width="48" height="48" alt="Install Auburn" style="padding:1px">
+			</a>
+			
+			<h1>Auburn</h1>
+			<p>A beautiful, speedy, fully customizable, tile-based new tab page for Chrome.</p>
+			
+			<footer>
+				<a>install</a> -
+				<a href="https://github.com/tkazec/auburn">source</a>
+			</footer>
+		</section>-->
+		
+		<section>
+			<a href="https://chrome.google.com/webstore/detail/mghenlmbmjcpehccoangkdpagbcbkdpc">
+				<img src="session-manager.png" width="48" height="48" alt="Install Session Manager" style="padding:1px">
+			</a>
+			
+			<h1>Session Manager</h1>
+			<p>A simple yet powerful Chrome extension for managing sets of tabs.</p>
+			
+			<footer>
+				<a href="https://chrome.google.com/webstore/detail/mghenlmbmjcpehccoangkdpagbcbkdpc">install</a> -
+				<a href="https://github.com/tkazec/session-manager">source</a>
+			</footer>
+		</section>
+		
+		<section id="other">
+			<p><a href="http://omfgupgrade.net">OMFG, upgrade!</a> / <a href="https://github.com/tkazec/keystop">keystop</a></p>
+		</section>
+		
+		<hr>
+		
+		<section>
+			<a href="mailto:me@tkaz.ec">
+				<img src="tkazec.png" width="50" height="50" alt="Send me an email" style="margin-bottom:20px">
+			</a>
+			
+			<h1>Teddy Cross</h1>
+			<p>I'm a 15 year old web &amp; game developer, currently interning at Game Closure. I love making beautiful, useful, and fun things. Feel free to look around, and if you'd like to know more, shoot me an <a href="mailto:me@tkaz.ec">email</a>.</p>
+			
+			<footer>
+				<a href="https://profiles.google.com/tkazec/about">google</a> -
+				<a href="https://twitter.com/tkazec">twitter</a> -
+				<a href="https://github.com/tkazec">github</a> -
+				<a href="http://hunch.com/tkazec/profile/">hunch</a> -
+				<a href="http://www.kickstarter.com/profile/tkazec">kickstarter</a> -
+				<a href="http://www.kiva.org/lender/tkazec">kiva</a>
+			</footer>
+		</section>
+	</body>
+</html>
