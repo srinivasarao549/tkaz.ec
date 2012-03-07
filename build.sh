@@ -12,17 +12,11 @@ cd $OUTDIR
 rm build.sh
 rm -rf .git
 
-sed -i '' -e "s/##GA##/$GA/" index.html
+sed -i '' -e "s/##GA##/$GA/" index.js
 
-yuicompressor -o css.css css.css
-
-python - <<EOF
-import re, subprocess
-
-def js(m):
-	proc = subprocess.Popen(["closure", "--language_in", "ECMASCRIPT5"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-	return "<script>" + proc.communicate(m.group(1))[0] + "</script>"
-
-file = re.sub("<script>((?:.|\n)+)</script>", js, open("index.html").read())
-open("index.html", "w").write(file)
-EOF
+echo "<style>`yuicompressor index.css`</style>" > index.css
+echo "<script>`closure --language_in ECMASCRIPT5 --js index.js`</script>" > index.js
+sed -i '' -e '/href="index.css"/d' -e '/<link/r index.css' index.html
+sed -i '' -e '/<script/d' -e '/<\/style>/r index.js' index.html
+rm index.css
+rm index.js
